@@ -4,11 +4,24 @@
   
     
     <entry>
+      <title>关于OpenFeign</title>
+      <link href="/posts/a16fb109.html"/>
+      <url>/posts/a16fb109.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="一、为什么用OpenFeign"><a href="#一、为什么用OpenFeign" class="headerlink" title="一、为什么用OpenFeign"></a>一、为什么用OpenFeign</h1><p>OpenFeign就利用SpringMVC的相关注解来声明请求方式，请求路径，请求参数，返回值类型这4个参数，然后基于动态代理帮我们生成远程调用的代码，而无需我们手动再编写，非常方便。实施</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>初识Redis</title>
       <link href="/posts/a614300d.html"/>
       <url>/posts/a614300d.html</url>
       
-        <content type="html"><![CDATA[<p><code>Redis的特征:</code></p><ul><li>键值（key-value）型，value支持多种不同数据结构，功能丰富</li><li>单线程，每个命令具备原子性</li><li>低延迟，速度快（基于内存.IO多路复用.良好的编码）。</li><li>支持数据持久化</li><li>支持主从集群.分片集群</li><li>支持多语言客户端</li></ul><h2 id="1-1认识NoSQL"><a href="#1-1认识NoSQL" class="headerlink" title="1.1认识NoSQL"></a>1.1认识NoSQL</h2><p>  NoSql可以翻译做Not Only Sql（不仅仅是SQL），或者是No Sql（非Sql的）数据库。是相对于传统关系型数据库而言，有很大差异的一种特殊的数据库，因此也称之为非关系型数据库。</p><h3 id="1-1-1结构化与非结构化"><a href="#1-1-1结构化与非结构化" class="headerlink" title="1.1.1结构化与非结构化"></a>1.1.1结构化与非结构化</h3><p>传统关系型数据库是结构化数据，每一张表都有严格的约束信息：字段名、字段数据类型、字段约束等等信息，而NoSql则对数据库格式没有严格约束。</p>]]></content>
+        <content type="html"><![CDATA[<p><code>一Redis的特征:</code></p><ul><li>键值（key-value）型，value支持多种不同数据结构，功能丰富</li><li>单线程，每个命令具备原子性</li><li>低延迟，速度快（基于内存.IO多路复用.良好的编码）。</li><li>支持数据持久化</li><li>支持主从集群.分片集群</li><li>支持多语言客户端</li></ul><h2 id="1-1认识NoSQL"><a href="#1-1认识NoSQL" class="headerlink" title="1.1认识NoSQL"></a>1.1认识NoSQL</h2><p>  NoSql可以翻译做Not Only Sql（不仅仅是SQL），或者是No Sql（非Sql的）数据库。是相对于传统关系型数据库而言，有很大差异的一种特殊的数据库，因此也称之为非关系型数据库。</p><h3 id="1-1-1结构化与非结构化"><a href="#1-1-1结构化与非结构化" class="headerlink" title="1.1.1结构化与非结构化"></a>1.1.1结构化与非结构化</h3><p>传统关系型数据库是结构化数据，每一张表都有严格的约束信息：字段名、字段数据类型、字段约束等等信息，而NoSql则对数据库格式没有严格约束。</p>]]></content>
       
       
       
@@ -21,7 +34,7 @@
       <link href="/posts/473862c4.html"/>
       <url>/posts/473862c4.html</url>
       
-        <content type="html"><![CDATA[<meta charset="UTF-8"><style>    #character {        width: 100px;        height: 80px;        background-image: url('../img/siteicon/player1_big.gif'); /* 游戏角色素材 */        background-size: cover;        position: absolute;    }    #treasure {        width: 30px;        height: 30px;        background-color: gold;        position: absolute;        top: 100px;        left: 100px;    }</style><body><div id="character"></div><div id="treasure"></div><script src="https://code.jquery.com/jquery-3.6.0.min.js"></script><script>$(document).ready(function() {    var score = 0;    $(document).keydown(function(e) {    var $character = $('#character');    var position = $character.position();    switch(e.key) {        case 'a': // left            $character.css({left: position.left - 10 + 'px'});            break;        case 'w': // up            $character.css({top: position.top - 10 + 'px'});            break;        case 'd': // right            $character.css({left: position.left + 10 + 'px'});            break;        case 's': // down            $character.css({top: position.top + 10 + 'px'});            break;    }});    $('#character').dblclick(function() {        //切换游戏角色        if ($(this).css('background-image').includes('player1_big')) {            $(this).css('background-image', 'url(../img/siteicon/player2.gif)'); //切换为2        } else {            $(this).css('background-image', 'url(../img/siteicon/player1_big.gif)'); //切换回1        }    });    setInterval(function() {        var $character = $('#character');        var $treasure = $('#treasure');        var characterPosition = $character.position();        var treasurePosition = $treasure.position();        if(Math.abs(characterPosition.left - treasurePosition.left) < 50 && Math.abs(characterPosition.top - treasurePosition.top) < 50) {            $treasure.css({top: Math.random() * $(window).height(), left: Math.random() * $(window).width()});            score++;            console.log('Score: ' + score);        }    }, 100);});</script></body>]]></content>
+        <content type="html"><![CDATA[<p><meta charset="UTF-8"></p><p><style></p><pre><code>#character &#123;    width: 100px;    height: 80px;    background-image: url(&#39;../img/siteicon/player1_big.gif&#39;); /* 游戏角色素材 */    background-size: cover;    position: absolute;&#125;#treasure &#123;    width: 30px;    height: 30px;    background-color: gold;    position: absolute;    top: 100px;    left: 100px;&#125;</code></pre><p>&lt;/style&gt;</p><body><div id="character"></div><div id="treasure"></div><script src="https://code.jquery.com/jquery-3.6.0.min.js"></script><script>$(document).ready(function() {    var score = 0;    $(document).keydown(function(e) {    var $character = $('#character');    var position = $character.position();    switch(e.key) {        case 'a': // left            $character.css({left: position.left - 10 + 'px'});            break;        case 'w': // up            $character.css({top: position.top - 10 + 'px'});            break;        case 'd': // right            $character.css({left: position.left + 10 + 'px'});            break;        case 's': // down            $character.css({top: position.top + 10 + 'px'});            break;    }});    $('#character').dblclick(function() {        //切换游戏角色        if ($(this).css('background-image').includes('player1_big')) {            $(this).css('background-image', 'url(../img/siteicon/player2.gif)'); //切换为2        } else {            $(this).css('background-image', 'url(../img/siteicon/player1_big.gif)'); //切换回1        }    });    setInterval(function() {        var $character = $('#character');        var $treasure = $('#treasure');        var characterPosition = $character.position();        var treasurePosition = $treasure.position();        if(Math.abs(characterPosition.left - treasurePosition.left) < 50 && Math.abs(characterPosition.top - treasurePosition.top) < 50) {            $treasure.css({top: Math.random() * $(window).height(), left: Math.random() * $(window).width()});            score++;            console.log('Score: ' + score);        }    }, 100);});</script></body>]]></content>
       
       
       
@@ -86,7 +99,7 @@
       <link href="/posts/302c4f09.html"/>
       <url>/posts/302c4f09.html</url>
       
-        <content type="html"><![CDATA[<p>&lt;% raw %&gt;<br>&#x2F;&#x2F;219971133-向子豪<br>    &#x2F;&#x2F; 三角形<br>    for (let i &#x3D; 0; i &lt;&#x3D; 5; i++) {<br>        for (let j &#x3D; i; j &lt;&#x3D; 5 - i; j++) {<br>            document.write(“&nbsp;&nbsp;”)<br>        }<br>        for (let k &#x3D; 0; k &lt; i; k++) {<br>            document.write(“*”)<br>            document.write(“&nbsp;&nbsp;&nbsp;”)<br>        }<br>        document.write(“<br>“)<br>    }<br>    document.write(“<br/>“);<br>    &#x2F;&#x2F; 平行四边形<br>    for (let i &#x3D; 0; i &lt;&#x3D; 5; i++) {<br>        for (let j &#x3D; 0; j &lt; number - i; j++) {<br>            document.write(“&emsp;”)<br>        }<br>        for (let k &#x3D; 0; k &lt;&#x3D; 5; k++) {<br>            document.write(“*&emsp;”)<br>        }<br>        document.write(“<br>“)<br>    }<br>    document.write(“<br/>“);<br>    &#x2F;&#x2F;菱形<br>    for (let i &#x3D; 1; i &lt;&#x3D; 3; i++) {<br>        for (let j &#x3D; 1; j &lt;&#x3D; 3 - i; j++) {<br>            document.write(“&emsp;”)<br>        }<br>        for (let j &#x3D; 1; j &lt;&#x3D; i; j++) {<br>            document.write(“* &emsp; “)<br>        }<br>        document.write(“<br>“)<br>    }</p><pre><code>for (let i = 1; i &lt;= 3; i++) &#123;    for (let j = 1; j &lt;= i; j++) &#123;        document.write(&quot;&amp;emsp;&quot;)    &#125;    for (let j = 1; j &lt;= 3 - i; j++) &#123;        document.write(&quot;* &amp;emsp; &quot;)    &#125;    document.write(&quot;&lt;br&gt;&quot;)&#125;</code></pre><p>&lt;% endraw %&gt;</p>]]></content>
+        <content type="html"><![CDATA[<p>&lt;% raw %&gt;<br>//219971133-向子豪<br>    // 三角形<br>    for (let i = 0; i &lt;= 5; i++) {<br>        for (let j = i; j &lt;= 5 - i; j++) {<br>            document.write(“&nbsp;&nbsp;”)<br>        }<br>        for (let k = 0; k &lt; i; k++) {<br>            document.write(“<em>“)<br>            document.write(“&nbsp;&nbsp;&nbsp;”)<br>        }<br>        document.write(“<br>“)<br>    }<br>    document.write(“<br/>“);<br>    // 平行四边形<br>    for (let i = 0; i &lt;= 5; i++) {<br>        for (let j = 0; j &lt; number - i; j++) {<br>            document.write(“&emsp;”)<br>        }<br>        for (let k = 0; k &lt;= 5; k++) {<br>            document.write(“</em>&emsp;”)<br>        }<br>        document.write(“<br>“)<br>    }<br>    document.write(“<br/>“);<br>    //菱形<br>    for (let i = 1; i &lt;= 3; i++) {<br>        for (let j = 1; j &lt;= 3 - i; j++) {<br>            document.write(“&emsp;”)<br>        }<br>        for (let j = 1; j &lt;= i; j++) {<br>            document.write(“* &emsp; “)<br>        }<br>        document.write(“<br>“)<br>    }</p><pre><code>for (let i = 1; i &lt;= 3; i++) &#123;    for (let j = 1; j &lt;= i; j++) &#123;        document.write(&quot;&amp;emsp;&quot;)    &#125;    for (let j = 1; j &lt;= 3 - i; j++) &#123;        document.write(&quot;* &amp;emsp; &quot;)    &#125;    document.write(&quot;&lt;br&gt;&quot;)&#125;</code></pre><p>&lt;% endraw %&gt;</p>]]></content>
       
       
       
@@ -121,17 +134,6 @@
     
     <entry>
       <title></title>
-      <link href="/js/runtime.js"/>
-      <url>/js/runtime.js</url>
-      
-        <content type="html"><![CDATA[var now = new Date();function createtime() {  var grt = new Date("29/03/2024 00:00:00");  now.setTime(now.getTime() + 250);  var days = (now - grt) / 1e3 / 60 / 60 / 24,    dnum = Math.floor(days),    hours = (now - grt) / 1e3 / 60 / 60 - 24 * dnum,    hnum = Math.floor(hours);  1 == String(hnum).length && (hnum = "0" + hnum);  var minutes = (now - grt) / 1e3 / 60 - 1440 * dnum - 60 * hnum,    mnum = Math.floor(minutes);  1 == String(mnum).length && (mnum = "0" + mnum);  var seconds = (now - grt) / 1e3 - 86400 * dnum - 3600 * hnum - 60 * mnum,    snum = Math.round(seconds);  1 == String(snum).length && (snum = "0" + snum);  let currentTimeHtml = "";    document.getElementById("workboard") && (document.getElementById("workboard").innerHTML = currentTimeHtml);}setInterval(() => {  createtime();}, 250);]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title></title>
       <link href="/css/custom.css"/>
       <url>/css/custom.css</url>
       
@@ -142,9 +144,9 @@
     
     
     <entry>
-      <title>标签</title>
-      <link href="/tags/index.html"/>
-      <url>/tags/index.html</url>
+      <title>友情鏈接</title>
+      <link href="/link/index.html"/>
+      <url>/link/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -153,9 +155,20 @@
     
     
     <entry>
-      <title>友情鏈接</title>
-      <link href="/link/index.html"/>
-      <url>/link/index.html</url>
+      <title></title>
+      <link href="/js/runtime.js"/>
+      <url>/js/runtime.js</url>
+      
+        <content type="html"><![CDATA[var now = new Date();function createtime() {  var grt = new Date("29/03/2024 00:00:00");  now.setTime(now.getTime() + 250);  var days = (now - grt) / 1e3 / 60 / 60 / 24,    dnum = Math.floor(days),    hours = (now - grt) / 1e3 / 60 / 60 - 24 * dnum,    hnum = Math.floor(hours);  1 == String(hnum).length && (hnum = "0" + hnum);  var minutes = (now - grt) / 1e3 / 60 - 1440 * dnum - 60 * hnum,    mnum = Math.floor(minutes);  1 == String(mnum).length && (mnum = "0" + mnum);  var seconds = (now - grt) / 1e3 - 86400 * dnum - 3600 * hnum - 60 * mnum,    snum = Math.round(seconds);  1 == String(snum).length && (snum = "0" + snum);  let currentTimeHtml = "";    document.getElementById("workboard") && (document.getElementById("workboard").innerHTML = currentTimeHtml);}setInterval(() => {  createtime();}, 250);]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>标签</title>
+      <link href="/tags/index.html"/>
+      <url>/tags/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
