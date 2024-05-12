@@ -8,7 +8,7 @@
       <link href="/posts/a16fb109.html"/>
       <url>/posts/a16fb109.html</url>
       
-        <content type="html"><![CDATA[<h1 id="一、为什么用OpenFeign"><a href="#一、为什么用OpenFeign" class="headerlink" title="一、为什么用OpenFeign"></a>一、为什么用OpenFeign</h1><p>OpenFeign就利用SpringMVC的相关注解来声明请求方式，请求路径，请求参数，返回值类型这4个参数，然后基于动态代理帮我们生成远程调用的代码，而无需我们手动再编写，非常方便。实施</p>]]></content>
+        <content type="html"><![CDATA[<h1 id="为什么用OpenFeign"><a href="#为什么用OpenFeign" class="headerlink" title="为什么用OpenFeign"></a>为什么用OpenFeign</h1><p><code>OpenFeign</code>就利用SpringMVC的相关注解来声明请求方式，请求路径，请求参数，返回值类型这4个参数，然后基于动态代理帮我们生成远程调用的代码，而无需我们手动再编写，非常方便。</p><h2 id="1-导入依赖"><a href="#1-导入依赖" class="headerlink" title="1.导入依赖"></a>1.导入依赖</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--openFeign--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.cloud<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-cloud-starter-openfeign<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--负载均衡器--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.cloud<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-cloud-starter-loadbalancer<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure><h2 id="2-连接池"><a href="#2-连接池" class="headerlink" title="2.连接池"></a>2.连接池</h2><p>Feign底层发起http请求，依赖于其它的框架。其底层支持的http客户端实现包括：</p><ul><li>HttpURLConnection：默认实现，不支持连接池</li><li>Apache HttpClient ：支持连接池</li><li>OKHttp：支持连接池</li></ul><p>因此我们通常会使用带有连接池的客户端来代替默认的HttpURLConnection。比如，我们使用OK Http。<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--OK http 的依赖 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>io.github.openfeign<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>feign-okhttp<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure></p><h3 id="2-1开启连接池"><a href="#2-1开启连接池" class="headerlink" title="2.1开启连接池"></a>2.1开启连接池</h3><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">feign:</span></span><br><span class="line">  <span class="attr">okhttp:</span></span><br><span class="line">    <span class="attr">enabled:</span> <span class="literal">true</span> <span class="comment"># 开启OKHttp功能</span></span><br></pre></td></tr></table></figure>]]></content>
       
       
       
@@ -56,7 +56,7 @@
     
     
     <entry>
-      <title>实验4</title>
+      <title>实验4:广告</title>
       <link href="/posts/undefined.html"/>
       <url>/posts/undefined.html</url>
       
@@ -82,7 +82,7 @@
     
     
     <entry>
-      <title>练习5</title>
+      <title>练习5:DOM</title>
       <link href="/posts/b6060529.html"/>
       <url>/posts/b6060529.html</url>
       
@@ -144,17 +144,6 @@
     
     
     <entry>
-      <title>友情鏈接</title>
-      <link href="/link/index.html"/>
-      <url>/link/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title></title>
       <link href="/js/runtime.js"/>
       <url>/js/runtime.js</url>
@@ -169,6 +158,17 @@
       <title>标签</title>
       <link href="/tags/index.html"/>
       <url>/tags/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>友情鏈接</title>
+      <link href="/link/index.html"/>
+      <url>/link/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
